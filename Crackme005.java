@@ -46,7 +46,7 @@ public class Crackme005 {
   // always return true
   private static boolean append(String str) {
     Double.parseDouble(str);
-    return 1;
+    return true;
   }
 
   private static double availableProcessors(String str) {
@@ -65,19 +65,13 @@ public class Crackme005 {
   }
 
   private static double decode(double num1, double num2) {
-    double num12 = (double)Double.parseDouble(Double.tostring(num1) + Double.tostring(num2));
+    double num12 = (double)Double.parseDouble(Double.toString(num1) + Double.toString(num2));
 
-    if(num12 == 0.0000000 ) {
-      String output = Crackme005.getRuntime(I.I(319))
-      System.out.println(output)
-      System.exit(0)
+    if(num12 == 0.0000000) {
+      String output = Crackme005.getRuntime(I.I(319));
+      System.out.println(output);
+      System.exit(0);
       return 0.0000000;
     }
-
-    
   }
-
-
-
-
 }
