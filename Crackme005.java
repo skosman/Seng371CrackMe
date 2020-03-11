@@ -1,5 +1,3 @@
-package agz.name.c005;
-
 import I.*;
 
 import java.util.*;
@@ -50,6 +48,7 @@ public class Crackme005 {
   }
 
   private static double availableProcessors(String str) {
+
     StringBuilder strBuilder = new StringBuilder();
     char[] strArray = str.toCharArray();
 
@@ -61,20 +60,41 @@ public class Crackme005 {
 
     Double objDouble = new Double;
 
-    ##TODO
+    // NEEDS TO BE FINISHED
   }
 
   private static double decode(double num1, double num2) {
+
+    // concatenates the two double parameters
     double num12 = (double)Double.parseDouble(Double.tostring(num1) + Double.tostring(num2));
 
     if(num12 == 0.0000000 ) {
-      String output = Crackme005.getRuntime(I.I(319))
-      System.out.println(output)
-      System.exit(0)
+      String output = Crackme005.getRuntime(I.I(319));
+      System.out.println(output);
+      System.exit(0);
       return 0.0000000;
     }
 
-    
+    double tempNum = num12;
+
+    // Finds the number of processors
+    int numProcessors = Runtime.getRuntime().availableProcessors();
+    double doubleProcessor = (double)(long) numProcessors;
+
+    // Finds the total memory
+    long longMemory = Runtime.getRuntime().totalMemory();
+    double doubleMemory = (double)longMemory;
+
+
+    // recalculates the number of processors
+    doubleProcessor = (tempNum - doubleMemory / 100000000.0) + doubleProcessor * 28.0 + doubleMemory / 107543.0;
+
+    // finds the length of the concatenated num12
+    numProcessors = Double.toString(num12).length();
+
+    // returns the number of processors by the size of memory and divides it by the length of num12
+    return doubleProcessor - doubleMemory /(double)(long)numProcessors;
+
   }
 
 
